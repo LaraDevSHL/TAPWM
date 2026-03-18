@@ -1,0 +1,13 @@
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\bin\Debug\PEmpregado.exe.config
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\bin\Debug\PEmpregado.exe
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\bin\Debug\PEmpregado.pdb
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.csproj.AssemblyReference.cache
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.Form1.resources
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.frmMensalista.resources
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.Properties.Resources.resources
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.csproj.GenerateResource.cache
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.csproj.CoreCompileInputs.cache
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.exe
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.pdb
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.exe.config
+C:\Users\aluno\source\repos\PEmpregado\PEmpregado\obj\Debug\PEmpregado.frmHorista.resources
