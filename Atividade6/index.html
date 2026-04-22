@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Triângulos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .card { max-width: 500px; margin: 50px auto; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .result-box { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card p-4">
+        <h2 class="text-center mb-4 text-primary">Verificar Triângulo</h2>
+        
+        <div class="mb-3">
+            <label for="ladoA" class="form-label">Lado A</label>
+            <input type="text" class="form-control" id="ladoA" placeholder="Ex: 10">
+        </div>
+        <div class="mb-3">
+            <label for="ladoB" class="form-label">Lado B</label>
+            <input type="text" class="form-control" id="ladoB" placeholder="Ex: 10">
+        </div>
+        <div class="mb-3">
+            <label for="ladoC" class="form-label">Lado C</label>
+            <input type="text" class="form-control" id="ladoC" placeholder="Ex: 10">
+        </div>
+
+        <button onclick="verificarTriangulo()" class="btn btn-primary w-100 fw-bold">Verificar</button>
+
+        <div id="resultado" class="alert result-box text-center fw-bold" role="alert"></div>
+    </div>
+</div>
+
+<script>
+function verificarTriangulo() {
+    // Captura os valores e converte para número
+    const a = parseFloat(document.getElementById('ladoA').value);
+    const b = parseFloat(document.getElementById('ladoB').value);
+    const c = parseFloat(document.getElementById('ladoC').value);
+    
+    const divRes = document.getElementById('resultado');
+    divRes.style.display = 'block';
+
+    // 1. Validar se são números usando isNaN
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        divRes.className = 'alert alert-warning result-box';
+        divRes.innerText = "Por favor, insira apenas valores numéricos válidos.";
+        return;
+    }
+
+    // 2. Regra de existência do triângulo
+    // |b-c| < a < b+c
+    const existe = (Math.abs(b - c) < a && a < (b + c)) &&
+                   (Math.abs(a - c) < b && b < (a + c)) &&
+                   (Math.abs(a - b) < c && c < (a + b));
+
+    if (!existe) {
+        divRes.className = 'alert alert-danger result-box';
+        divRes.innerText = "Os valores informados NÃO formam um triângulo.";
+        return;
+    }
+
+    // 3. Identificar o tipo
+    let tipo = "";
+    if (a === b && b === c) {
+        tipo = "Equilátero (Todos os lados iguais)";
+    } else if (a === b || b === c || a === c) {
+        tipo = "Isósceles (Dois lados iguais)";
+    } else {
+        tipo = "Escaleno (Todos os lados diferentes)";
+    }
+
+    divRes.className = 'alert alert-success result-box';
+    divRes.innerText = `É um triângulo: ${tipo}`;
+}
+</script>
+
+</body>
+</html>
