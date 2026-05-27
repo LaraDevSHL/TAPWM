@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janela Interativa</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f4f4f4;
+    }
+
+    h1{
+      color: #333;
+    }
+
+    img{
+      width: 300px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="texto">Janela Fechada</h1>
+
+  <img 
+    id="janela"
+    src="fechada.png"
+    alt="Janela Fechada"
+  >
+
+  <script>
+
+    // Pegando os elementos
+    const janela = document.getElementById("janela");
+    const texto = document.getElementById("texto");
+
+    // Imagens
+    const fechada = "fechada.png";
+    const aberta = "aberta.png";
+    const quebrada = "quebrada.png";
+
+    // Abrir janela
+    function abrirJanela(){
+
+      // Não abre se estiver quebrada
+      if(janela.src.includes(quebrada)){
+        return;
+      }
+
+      janela.src = aberta;
+      texto.innerHTML = "Janela Aberta";
+    }
+
+    // Fechar janela
+    function fecharJanela(){
+
+      // Não fecha se estiver quebrada
+      if(janela.src.includes(quebrada)){
+        return;
+      }
+
+      janela.src = fechada;
+      texto.innerHTML = "Janela Fechada";
+    }
+
+    // Quebrar janela
+    function quebrarJanela(){
+      janela.src = quebrada;
+      texto.innerHTML = "Janela Quebrada";
+    }
+
+    // Eventos
+    janela.addEventListener("mouseover", abrirJanela);
+
+    janela.addEventListener("mouseout", fecharJanela);
+
+    janela.addEventListener("click", quebrarJanela);
+
+  </script>
+
+</body>
+</html>
