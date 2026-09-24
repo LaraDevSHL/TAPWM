@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Maiúsculo e Minúsculo</title>
+</head>
+<body>
+
+    <label for="texto">Digite um texto:</label>
+    <input type="text" id="texto" placeholder="Digite aqui">
+
+    <br><br>
+
+    <input type="radio" id="maiusculo" name="formato" value="maiusculo">
+    <label for="maiusculo">Maiúsculo</label>
+
+    <input type="radio" id="minusculo" name="formato" value="minusculo">
+    <label for="minusculo">Minúsculo</label>
+
+    <script>
+        const inputTexto = document.getElementById('texto');
+        const radioMaiusculo = document.getElementById('maiusculo');
+        const radioMinusculo = document.getElementById('minusculo');
+
+        function aplicarFormato() {
+            if (radioMaiusculo.checked) {
+                inputTexto.value = inputTexto.value.toUpperCase();
+            } else if (radioMinusculo.checked) {
+                inputTexto.value = inputTexto.value.toLowerCase();
+            }
+        }
+
+        radioMaiusculo.addEventListener('change', aplicarFormato);
+        radioMinusculo.addEventListener('change', aplicarFormato);
+
+        inputTexto.addEventListener('input', aplicarFormato);
+    </script>
+
+</body>
+</html>
